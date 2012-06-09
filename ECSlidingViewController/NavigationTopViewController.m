@@ -14,7 +14,7 @@
 {
   [super viewWillAppear:animated];
   
-  if (![self.slidingViewController.underLeftViewController isKindOfClass:[MenuViewController class]]) {
+  if (![self.slidingViewController.underLeftViewController isKindOfClass:[UITableViewController class]]) {
     self.slidingViewController.underLeftViewController  = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
   }
   
