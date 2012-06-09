@@ -24,6 +24,10 @@
   }
   
   slidingViewController.topViewController = [storyboard instantiateViewControllerWithIdentifier:@"FirstTop"];
+    
+  // left underview settings
+  [slidingViewController setAnchorRightRevealAmount:280.0f];
+  slidingViewController.underLeftWidthLayout = ECFullWidth;
   
   return YES;
 }
