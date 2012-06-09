@@ -17,7 +17,6 @@
 		2750E77D14CDB0DF007727A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2750E77C14CDB0DF007727A0 /* main.m */; };
 		2750E78114CDB0DF007727A0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2750E78014CDB0DF007727A0 /* AppDelegate.m */; };
 		2750E78814CDB114007727A0 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2750E78714CDB114007727A0 /* iPhone.storyboard */; };
-		2750E79414CDB93A007727A0 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2750E79314CDB93A007727A0 /* MenuViewController.m */; };
 		2750E79714CDB959007727A0 /* FirstTopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2750E79614CDB959007727A0 /* FirstTopViewController.m */; };
 		2750E79A14CDB99A007727A0 /* SecondTopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2750E79914CDB99A007727A0 /* SecondTopViewController.m */; };
 		2750E79D14CDBA48007727A0 /* ThirdTopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2750E79C14CDBA48007727A0 /* ThirdTopViewController.m */; };
@@ -26,6 +25,7 @@
 		2750E7AF14CF1306007727A0 /* UIImage+ImageWithUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2750E7AD14CF1306007727A0 /* UIImage+ImageWithUIView.m */; };
 		27FC94E014D0C14E0000B18C /* InitialSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FC94DF14D0C14E0000B18C /* InitialSlidingViewController.m */; };
 		27FC94E314D105C60000B18C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FC94E214D105C60000B18C /* QuartzCore.framework */; };
+		3B801E551583EF8F0053B7CF /* ECSlidingViewSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B801E541583EF8F0053B7CF /* ECSlidingViewSegue.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,8 +45,6 @@
 		2750E77F14CDB0DF007727A0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2750E78014CDB0DF007727A0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2750E78714CDB114007727A0 /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
-		2750E79214CDB93A007727A0 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
-		2750E79314CDB93A007727A0 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		2750E79514CDB959007727A0 /* FirstTopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstTopViewController.h; sourceTree = "<group>"; };
 		2750E79614CDB959007727A0 /* FirstTopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstTopViewController.m; sourceTree = "<group>"; };
 		2750E79814CDB99A007727A0 /* SecondTopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondTopViewController.h; sourceTree = "<group>"; };
@@ -62,6 +60,8 @@
 		27FC94DE14D0C14E0000B18C /* InitialSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialSlidingViewController.h; sourceTree = "<group>"; };
 		27FC94DF14D0C14E0000B18C /* InitialSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialSlidingViewController.m; sourceTree = "<group>"; };
 		27FC94E214D105C60000B18C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		3B801E531583EF8F0053B7CF /* ECSlidingViewSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingViewSegue.h; sourceTree = "<group>"; };
+		3B801E541583EF8F0053B7CF /* ECSlidingViewSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingViewSegue.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,8 +147,6 @@
 				2750E79614CDB959007727A0 /* FirstTopViewController.m */,
 				27FC94DE14D0C14E0000B18C /* InitialSlidingViewController.h */,
 				27FC94DF14D0C14E0000B18C /* InitialSlidingViewController.m */,
-				2750E79214CDB93A007727A0 /* MenuViewController.h */,
-				2750E79314CDB93A007727A0 /* MenuViewController.m */,
 				27498DCC14E96C75005C043E /* NavigationTopViewController.h */,
 				27498DCD14E96C75005C043E /* NavigationTopViewController.m */,
 				27498DD314E96EEF005C043E /* SampleTableViewController.h */,
@@ -170,6 +168,8 @@
 				2750E7AB14CF1306007727A0 /* ECSlidingViewController.m */,
 				279E158D14D737F60028A9EE /* UIImage+ImageWithUIView.h */,
 				2750E7AD14CF1306007727A0 /* UIImage+ImageWithUIView.m */,
+				3B801E531583EF8F0053B7CF /* ECSlidingViewSegue.h */,
+				3B801E541583EF8F0053B7CF /* ECSlidingViewSegue.m */,
 			);
 			name = ECSlidingViewController;
 			path = Vendor/ECSlidingViewController;
@@ -240,7 +240,6 @@
 			files = (
 				2750E77D14CDB0DF007727A0 /* main.m in Sources */,
 				2750E78114CDB0DF007727A0 /* AppDelegate.m in Sources */,
-				2750E79414CDB93A007727A0 /* MenuViewController.m in Sources */,
 				2750E79714CDB959007727A0 /* FirstTopViewController.m in Sources */,
 				2750E79A14CDB99A007727A0 /* SecondTopViewController.m in Sources */,
 				2750E79D14CDBA48007727A0 /* ThirdTopViewController.m in Sources */,
@@ -250,6 +249,7 @@
 				27FC94E014D0C14E0000B18C /* InitialSlidingViewController.m in Sources */,
 				27498DCE14E96C75005C043E /* NavigationTopViewController.m in Sources */,
 				27498DD514E96EEF005C043E /* SampleTableViewController.m in Sources */,
+				3B801E551583EF8F0053B7CF /* ECSlidingViewSegue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
