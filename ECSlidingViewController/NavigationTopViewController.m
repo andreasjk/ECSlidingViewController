@@ -22,7 +22,7 @@
     self.slidingViewController.underRightViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"UnderRight"];
   }
   
-  [self.view addGestureRecognizer:self.slidingViewController.panGesture];
+  // The pan gesture is added automatically to navigation controllers
 }
 
 @end

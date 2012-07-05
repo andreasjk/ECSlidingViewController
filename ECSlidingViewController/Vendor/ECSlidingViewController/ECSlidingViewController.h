@@ -56,6 +56,7 @@ typedef enum {
 @interface ECSlidingViewController : UIViewController{
   CGPoint startTouchPosition;
   BOOL topViewHasFocus;
+  BOOL topViewHasManuallySetGestureRecognizer;
 }
 
 /** Returns the view controller that will be visible when the top view is slide to the right.
@@ -140,6 +141,20 @@ typedef enum {
  */
 - (UIPanGestureRecognizer *)panGesture;
 
+/* This method removes the gesture from the whole view and adds it only to the place it was set before (for views managed by NavigationViewController to navigation bar)*/
+
+- (void)resetGestureToPreviousGestureArea;
+
+/* This methot adds the gesture to whole view for easy slide back. It does not set it for views that are not managed
+ by a NavigationViewController because they either have it manually declared in their implementation or are not supposed 
+ support gestures*/
+
+- (void)setGestureToWholeView;
+
+/* This method adds gesture recognizer to the view that can be specified (use self to set gesture to whole view).*/
+
+- (void)manuallyAddGestureRecognizerToViewController:(UIViewController *)ViewControllerWithGesture;
+
 /** Slides the top view in the direction of the specified side.
  
  A peek amount or reveal amount must be set for the given side. The top view will anchor to one of those specified values.
@@ -190,6 +205,7 @@ typedef enum {
 
 /** Returns true if the top view is completely off the screen */
 - (BOOL)topViewIsOffScreen;
+
 
 @end
 

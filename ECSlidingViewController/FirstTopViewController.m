@@ -27,8 +27,8 @@
   if (![self.slidingViewController.underRightViewController isKindOfClass:[UnderRightViewController class]]) {
     self.slidingViewController.underRightViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"UnderRight"];
   }
-  
-  [self.view addGestureRecognizer:self.slidingViewController.panGesture];
+  //manually adding gesture recognizer to whole view (instead of [self.view addGestureRecognizer:self.slidingViewController.panGesture];)
+  [self.slidingViewController manuallyAddGestureRecognizerToViewController:self];
 }
 
 - (IBAction)revealMenu:(id)sender

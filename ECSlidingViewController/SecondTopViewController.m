@@ -21,7 +21,7 @@
   self.slidingViewController.anchorLeftPeekAmount     = 0;
   self.slidingViewController.anchorLeftRevealAmount   = 0;
   
-  [self.view addGestureRecognizer:self.slidingViewController.panGesture];
+  //no gesture recognizer
 }
 
 - (IBAction)revealMenu:(id)sender

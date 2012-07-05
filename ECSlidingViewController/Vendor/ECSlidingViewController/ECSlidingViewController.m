@@ -107,6 +107,8 @@ NSString *const ECSlidingViewTopDidReset          = @"ECSlidingViewTopDidReset";
   _topViewController.view.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.view.layer.bounds].CGPath;
   
   [self.view addSubview:_topViewController.view];
+  
+  [self resetGestureToPreviousGestureArea];
 }
 
 - (void)setUnderLeftViewController:(UIViewController *)theUnderLeftViewController
@@ -277,6 +279,33 @@ NSString *const ECSlidingViewTopDidReset          = @"ECSlidingViewTopDidReset";
   return _panGesture;
 }
 
+- (void)resetGestureToPreviousGestureArea
+{
+  if ([_topViewController isKindOfClass:[UINavigationController class]]) {
+      [((UINavigationController *)_topViewController).navigationBar addGestureRecognizer:self.panGesture];
+  }
+    
+  else if (!topViewHasManuallySetGestureRecognizer) {
+      [_topViewController.view removeGestureRecognizer:self.panGesture];
+  }
+}
+
+- (void)setGestureToWholeView
+{
+  //sets BOOL to false if the current topView has no gestureRecognizers
+  if ([[_topViewController.view gestureRecognizers] count] == 0) {
+      topViewHasManuallySetGestureRecognizer = FALSE;
+  }
+  
+  [_topViewController.view addGestureRecognizer:self.panGesture];
+}
+
+- (void)manuallyAddGestureRecognizerToViewController:(UIViewController *)ViewControllerWithGesture
+{ 
+  [ViewControllerWithGesture.view addGestureRecognizer:self.panGesture];
+  topViewHasManuallySetGestureRecognizer = TRUE;
+}
+
 - (void)anchorTopViewTo:(ECSide)side
 {
   [self anchorTopViewTo:side animations:nil onComplete:nil];
@@ -315,6 +344,8 @@ NSString *const ECSlidingViewTopDidReset          = @"ECSlidingViewTopDidReset";
       [[NSNotificationCenter defaultCenter] postNotificationName:key object:self userInfo:nil];
     });
   }];
+  
+  [self setGestureToWholeView];
 }
 
 - (void)anchorTopViewOffScreenTo:(ECSide)side
@@ -372,6 +403,9 @@ NSString *const ECSlidingViewTopDidReset          = @"ECSlidingViewTopDidReset";
     }
     [self topViewHorizontalCenterDidChange:self.resettedCenter];
   }];
+  
+   
+  [self resetGestureToPreviousGestureArea];
 }
 
 - (NSUInteger)autoResizeToFillScreen
