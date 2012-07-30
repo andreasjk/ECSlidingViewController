@@ -20,7 +20,7 @@
   self.view.layer.shadowRadius = 10.0f;
   self.view.layer.shadowColor = [UIColor blackColor].CGColor;
   
-  if (![self.slidingViewController.underLeftViewController isKindOfClass:[MenuViewController class]]) {
+  if (![self.slidingViewController.underLeftViewController isKindOfClass:[UITableViewController class]]) {
     self.slidingViewController.underLeftViewController  = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
   }
   
